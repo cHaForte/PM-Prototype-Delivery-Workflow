@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用户注册登录 - 原型</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 登录页 -->
+    <div id="page-login" class="page active">
+      <div class="card">
+        <h1>登录</h1>
+        <form id="form-login" novalidate>
+          <div class="field">
+            <label for="login-email">邮箱</label>
+            <input type="email" id="login-email" placeholder="请输入邮箱" required>
+            <span class="error-msg" id="login-email-error"></span>
+          </div>
+          <div class="field">
+            <label for="login-password">密码</label>
+            <input type="password" id="login-password" placeholder="请输入密码" required>
+            <span class="error-msg" id="login-password-error"></span>
+          </div>
+          <button type="submit" class="btn-primary">登录</button>
+        </form>
+        <div class="links">
+          <a href="#" id="link-to-register">还没有账号？立即注册</a>
+          <a href="#" id="link-to-forgot">忘记密码？</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 注册页 -->
+    <div id="page-register" class="page">
+      <div class="card">
+        <h1>注册</h1>
+        <form id="form-register" novalidate>
+          <div class="field">
+            <label for="reg-email">邮箱</label>
+            <input type="email" id="reg-email" placeholder="请输入邮箱" required>
+            <span class="error-msg" id="reg-email-error"></span>
+          </div>
+          <div class="field">
+            <label for="reg-password">密码</label>
+            <input type="password" id="reg-password" placeholder="至少8位，包含字母和数字" required minlength="8">
+            <span class="hint" id="reg-password-hint"></span>
+            <span class="error-msg" id="reg-password-error"></span>
+          </div>
+          <div class="field">
+            <label for="reg-confirm">确认密码</label>
+            <input type="password" id="reg-confirm" placeholder="再次输入密码" required>
+            <span class="error-msg" id="reg-confirm-error"></span>
+          </div>
+          <button type="submit" class="btn-primary">注册</button>
+        </form>
+        <div class="links">
+          <a href="#" id="link-to-login-from-reg">已有账号？立即登录</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 忘记密码页 -->
+    <div id="page-forgot" class="page">
+      <div class="card">
+        <h1>忘记密码</h1>
+        <form id="form-forgot" novalidate>
+          <div class="field">
+            <label for="forgot-email">注册邮箱</label>
+            <input type="email" id="forgot-email" placeholder="请输入注册时使用的邮箱" required>
+            <span class="error-msg" id="forgot-email-error"></span>
+          </div>
+          <button type="submit" class="btn-primary">发送重置链接</button>
+        </form>
+        <div class="links">
+          <a href="#" id="link-to-login-from-forgot">返回登录</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主页（登录成功） -->
+    <div id="page-home" class="page">
+      <div class="card">
+        <h1>欢迎</h1>
+        <p class="welcome-text" id="welcome-text">欢迎，user@example.com</p>
+        <button id="btn-logout" class="btn-secondary">退出登录</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示弹窗 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
