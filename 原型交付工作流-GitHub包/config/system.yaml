@@ -1,0 +1,31 @@
+﻿# 系统配置
+project:
+  name: 多智能体原型交付工作流
+  version: 1.0.0
+
+paths:
+  vault: ./vault
+  prototypes: ./prototypes
+  status_file: ./vault/_status.json
+
+workflow:
+  mode: semi-auto  # semi-auto | manual
+  default_config: ./config/workflow.json
+
+agents:
+  orchestrator: product-flow-orchestrator
+  requirement: agent-requirement
+  prototype: agent-prototype
+  qa: agent-qa
+  doc: agent-doc
+
+confirmation:
+  commands:
+    confirm: 确认
+    view: 查看
+    redo: 重做
+    modify: 修改
+    exit: 退出
+  error_commands:
+    continue: 继续
+    abort: 取消

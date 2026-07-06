@@ -1,0 +1,50 @@
+﻿{
+  "version": "2.0",
+  "name": "原型交付工作流",
+  "mode": "semi-auto",
+  "stages": [
+    {
+      "id": "requirement-organization",
+      "name": "需求整理",
+      "agent": "agent-requirement",
+      "agent_mode": "A",
+      "description": "整理用户需求，输出需求整理摘要（不生成变更单）",
+      "output_path": "vault/01-需求管理/需求整理摘要/{project}-需求整理摘要.md",
+      "confirm_required": true,
+      "confirm_prompt": "需求整理完成，输入确认进入原型生成"
+    },
+    {
+      "id": "prototype-generation",
+      "name": "原型生成（含迭代+文档）",
+      "agent": "agent-prototype",
+      "agent_mode": "A+B",
+      "description": "生成原型 → 迭代调整 → 原型定稿 → 撰写三份文档",
+      "output_path": "prototypes/{project}/",
+      "confirm_required": true,
+      "confirm_prompt": "原型已定稿，输入确认进入文档撰写",
+      "sub_stages": [
+        {
+          "id": "doc-change-order",
+          "name": "需求变更单撰写",
+          "agent": "agent-requirement",
+          "agent_mode": "C",
+          "output_path": "vault/01-需求管理/需求变更单/{project}-需求变更单.md"
+        },
+        {
+          "id": "doc-test-plan",
+          "name": "测试大纲撰写",
+          "agent": "agent-qa",
+          "agent_mode": "B",
+          "output_path": "vault/03-质量管理/测试大纲/{project}-测试大纲.md"
+        },
+        {
+          "id": "doc-user-help",
+          "name": "用户帮助文档撰写",
+          "agent": "agent-doc",
+          "agent_mode": "B",
+          "output_path": "vault/04-文档管理/用户帮助文档/{project}-用户帮助文档.md"
+        }
+      ]
+    }
+  ]
+}
