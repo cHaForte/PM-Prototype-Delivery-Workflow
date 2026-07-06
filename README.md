@@ -1,5 +1,4 @@
-# PM-Prototype-Delivery-Workflow
-# 多智能体原型交付工作流
+﻿# 多智能体原型交付工作流
 
 基于 Codex Skills + Obsidian 的 HTML 原型自动化交付系统。
 
@@ -64,8 +63,8 @@ Orchestrator：我理解的需求是「用户登录功能」，请确认 (输入
 │   ├── agent-prototype\             # 原型生成智能体
 │   ├── agent-qa\                    # 质量检查智能体
 │   └── agent-doc\                   # 文档管理智能体
-├── vault\ # Obsidian 知识库
-│ ├── 00-系统配置\ # 智能体配置、工作流程、模板
+├── vault\                   # Obsidian 知识库
+│   ├── 00-系统配置\          # 智能体配置、工作流程、模板
 │   ├── 01-需求管理\          # 需求变更单、变更日志
 │   ├── 02-原型管理\          # 原型说明、版本记录
 │   ├── 03-质量管理\          # 检查报告、问题追踪
@@ -112,3 +111,4 @@ PowerShell 5.1 默认编码为 ANSI（中文系统下为 GB2312），
 如果打开 HTML 文件看到乱码，原因通常是：
 文件实际编码 ≠ HTML 头部的 charset 声明。
 用 VS Code 或 Notepad++ 打开后「另存为 UTF-8」即可修复。
+
